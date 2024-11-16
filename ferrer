@@ -1,0 +1,39 @@
+package elduro;
+
+import java.util.Scanner;
+
+public class Ferrer {
+
+	// Metodo per contare quante volte appare la lettera 'a' in una stringa
+	public static int conta(String testo) {
+
+		int contatore = 0;
+
+		for (int i = 0; i < testo.length(); i++) {
+			char carattere = testo.charAt(i);
+			if (carattere == 'a' || carattere == 'A') {
+				contatore++;
+			}
+
+		}
+		return contatore;
+	}
+
+	// Metodo per stampare la lettera 'A' in maiuscolo il numero di volte
+	// specificato
+	public static void stampa(int numero) {
+		System.out.println("A".repeat(numero));
+	}
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Inserisci una stringa:");
+		String testo = scanner.nextLine();
+
+		int contatore = conta(testo);
+		System.out.println("La lettera 'a' è apparsa " + contatore + " volte.");
+
+		// Stampa la lettera 'A' in maiuscolo il numero di volte trovato
+		stampa(contatore);
+	}
+}
